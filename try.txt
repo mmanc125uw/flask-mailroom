@@ -1,0 +1,33 @@
+
+;;;;***MMM edit requirements.txt
+change markupsafe to 1.1.1
+pip install markupsafe 		;downloads the latest
+
+change psycopg2-binary to 2.8.5
+pip install psycopg2-binary
+
+;;;;;to run and test
+mkvirtualenv flask-mailroom
+pip install -r requirements.txt
+python setup.py
+python main.py
+
+
+;;;;;***MMM test
+http://localhost:6738/donations/
+
+
+;;;;;pub to heroku
+git init                # Only necessary if this is not already a git repository
+heroku create
+
+
+pip installs .....
+pip freeze > requirements.txt
+git add .
+git commit -a -m "Initial commit"  # Only necessary because this is a new git repo
+git push heroku master  # If you have any changes or files to add, commit them before you push. 
+
+heroku addons:create heroku-postgresql:hobby-dev
+heroku run python setup.py
+heroku open
